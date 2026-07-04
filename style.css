@@ -745,3 +745,101 @@ a {
         flex-direction: column;
     }
 }
+
+/* Social Section */
+.social-section {
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+}
+
+.social-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.social-card {
+    background-color: var(--color-bg);
+    border: 1px solid rgba(232, 228, 223, 0.6);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.social-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(255,255,255,0.8), transparent);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity var(--transition-smooth);
+}
+
+.social-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: transparent;
+}
+
+.social-card:hover::before {
+    opacity: 1;
+}
+
+.social-icon {
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #ffffff;
+    transition: all var(--transition-smooth);
+    box-shadow: 0 8px 16px -8px rgba(0,0,0,0.05);
+}
+
+.social-icon svg {
+    width: 36px;
+    height: 36px;
+    fill: currentColor;
+    transition: all var(--transition-smooth);
+}
+
+.social-card:hover .social-icon {
+    transform: scale(1.1);
+    box-shadow: 0 12px 24px -8px rgba(0,0,0,0.1);
+}
+
+.social-card.youtube .social-icon { color: #FF0000; }
+.social-card.instagram .social-icon {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(214, 36, 159, 0.2);
+}
+.social-card.x-twitter .social-icon { color: #000000; }
+
+.social-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    font-family: var(--font-heading);
+}
+
+.social-card p {
+    color: var(--color-text-light);
+    font-size: 1.05rem;
+}
