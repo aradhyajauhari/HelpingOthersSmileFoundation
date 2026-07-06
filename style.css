@@ -177,8 +177,11 @@ a {
 }
 
 .nav-logo-img {
-    height: 28px;
-    width: 28px;
+    height: 48px;
+    width: 48px;
+    object-fit: cover;
+    transform: scale(1.2);
+    border-radius: 50%;
 }
 
 .nav-links {
@@ -581,12 +584,13 @@ a {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    transform: scale(1.15);
     filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
     transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .collaborator-card.glass-panel:hover .collaborator-logo img {
-    transform: scale(1.08);
+    transform: scale(1.25);
     filter: drop-shadow(0 8px 15px rgba(0,0,0,0.1));
 }
 
@@ -799,9 +803,11 @@ a {
 }
 
 .footer-logo-img {
-    height: 32px;
-    width: 32px;
-    filter: grayscale(100%) brightness(200%);
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    transform: scale(1.1);
+    border-radius: 50%;
 }
 
 .footer-brand h3 {
